@@ -1,0 +1,7 @@
+Files stored in directory "Zasoby" have their own licenses and this license does not influence them.
+Other files in this repository are published under Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+---------------------------------------------------------------------------------------------
+
+Pliki przechowywane w folderze "Zasoby" posiadaj¹ w³asne licencje i ten plik ich nie dotyczy.
+Pozosta³e licencje publikowane s¹ na zasadach licencji Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0): https://creativecommons.org/licenses/by-nc-sa/4.0/
