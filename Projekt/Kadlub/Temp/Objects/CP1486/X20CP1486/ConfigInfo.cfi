@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version="4.3.5.113 SP"?>
+<ConfigInfo xmlns="http://br-automation.co.at/AS/BuildInfo">
+  <TaskClass
+    Name="Cyclic#1" />
+  <TaskClass
+    Name="Cyclic#2" />
+  <TaskClass
+    Name="Cyclic#3" />
+  <TaskClass
+    Name="Cyclic#4">
+    <Task
+      Name="Ship"
+      Disable="false"
+      Source="Software.Code.Ship"
+      Language="IEC">
+      <InternalFile
+        Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Temp\Objects\CP1486\X20CP1486\Ship\Main.st.var" />
+      <File
+        Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\Code\Ship\Types.typ" />
+      <File
+        Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\Code\Ship\Variables.var" />
+    </Task>
+  </TaskClass>
+  <TaskClass
+    Name="Cyclic#5" />
+  <TaskClass
+    Name="Cyclic#6" />
+  <TaskClass
+    Name="Cyclic#7" />
+  <TaskClass
+    Name="Cyclic#8" />
+</ConfigInfo>

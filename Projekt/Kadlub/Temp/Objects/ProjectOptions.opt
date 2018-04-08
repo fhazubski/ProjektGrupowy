@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version="4.3.5.113 SP"?>
+<ProjectOptions
+  IecNamingConventions="true"
+  IecKeywordsAsStructureMembers="false"
+  IecExtendedConstants="true"
+  LogicalDirectory="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\"
+  TempDirectory="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Temp\"
+  AutomationStudioVersion="4.3.5.113 SP"
+  AutomationStudioEdition="Standard"
+  CrossReference="false"
+  ActiveConfiguration="CP1486"
+  CreateAnsiCDeclarations="false" />

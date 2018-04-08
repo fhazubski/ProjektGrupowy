@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version="4.3.5.113 SP"?>
+<Objects>
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Package.pkg"
+    LogicalPath=""
+    Type="Package"
+    LastWriteTime="131676770898170290" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Global.typ"
+    LogicalPath="Global.typ"
+    Type="File"
+    LastWriteTime="131676754135693181"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Global.var"
+    LogicalPath="Global.var"
+    Type="File"
+    LastWriteTime="131676754135693181"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\Package.pkg"
+    LogicalPath="Libraries"
+    Type="Package"
+    LastWriteTime="131676754166737235" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\operator\Binary.lby"
+    LogicalPath="Libraries.operator"
+    Type="Library"
+    LastWriteTime="131676754148485203" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\operator\operator.fun"
+    LogicalPath="Libraries.operator.operator.fun"
+    Type="File"
+    LastWriteTime="131676754148329203"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\operator\operator.typ"
+    LogicalPath="Libraries.operator.operator.typ"
+    Type="File"
+    LastWriteTime="131676754148485203"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\operator\operator.var"
+    LogicalPath="Libraries.operator.operator.var"
+    Type="File"
+    LastWriteTime="131676754148485203"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\runtime\Binary.lby"
+    LogicalPath="Libraries.runtime"
+    Type="Library"
+    LastWriteTime="131676754154569214" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\runtime\runtime.fun"
+    LogicalPath="Libraries.runtime.runtime.fun"
+    Type="File"
+    LastWriteTime="131676754154413214"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\runtime\runtime.typ"
+    LogicalPath="Libraries.runtime.runtime.typ"
+    Type="File"
+    LastWriteTime="131676754154413214"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\runtime\runtime.var"
+    LogicalPath="Libraries.runtime.runtime.var"
+    Type="File"
+    LastWriteTime="131676754154569214"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\astime\Binary.lby"
+    LogicalPath="Libraries.astime"
+    Type="Library"
+    LastWriteTime="131676754160653225" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\astime\astime.fun"
+    LogicalPath="Libraries.astime.astime.fun"
+    Type="File"
+    LastWriteTime="131676754160497224"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\astime\astime.typ"
+    LogicalPath="Libraries.astime.astime.typ"
+    Type="File"
+    LastWriteTime="131676754160497224"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\astime\astime.var"
+    LogicalPath="Libraries.astime.astime.var"
+    Type="File"
+    LastWriteTime="131676754160653225"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\AsIecCon\Binary.lby"
+    LogicalPath="Libraries.AsIecCon"
+    Type="Library"
+    LastWriteTime="131676754166581235" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\AsIecCon\AsIecCon.fun"
+    LogicalPath="Libraries.AsIecCon.AsIecCon.fun"
+    Type="File"
+    LastWriteTime="131676754166581235"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\AsIecCon\AsIecCon.typ"
+    LogicalPath="Libraries.AsIecCon.AsIecCon.typ"
+    Type="File"
+    LastWriteTime="131676754166581235"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\AsIecCon\AsIecCon.var"
+    LogicalPath="Libraries.AsIecCon.AsIecCon.var"
+    Type="File"
+    LastWriteTime="131676754166581235"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\Package.pkg"
+    LogicalPath="Software"
+    Type="Package"
+    LastWriteTime="131676771139658714" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\Code\Package.pkg"
+    LogicalPath="Software.Code"
+    Type="Package"
+    LastWriteTime="131676771291290981" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\Code\Ship\IEC.prg"
+    LogicalPath="Software.Code.Ship"
+    Type="Program"
+    LastWriteTime="131676771231854876" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\Code\Ship\Main.st"
+    LogicalPath="Software.Code.Ship.Main.st"
+    Type="File"
+    LastWriteTime="131676777068449128"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\Code\Ship\Types.typ"
+    LogicalPath="Software.Code.Ship.Types.typ"
+    Type="File"
+    LastWriteTime="131676775578178510"
+    Private="true" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\Code\Ship\Variables.var"
+    LogicalPath="Software.Code.Ship.Variables.var"
+    Type="File"
+    LastWriteTime="131676773516322889"
+    Private="true" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\HMI\Package.pkg"
+    LogicalPath="Software.HMI"
+    Type="Package"
+    LastWriteTime="131676782140818038" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\HMI\GUIShip\Vc.dob"
+    LogicalPath="Software.HMI.GUIShip"
+    Type="DataObject"
+    LastWriteTime="131676780554607252" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\HMI\GUIShip\VCObject.vc"
+    LogicalPath="Software.HMI.GUIShip.VCObject.vc"
+    Type="File"
+    LastWriteTime="131676780554607252"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\HMI\GUIShipM\Vc.dob"
+    LogicalPath="Software.HMI.GUIShipM"
+    Type="DataObject"
+    LastWriteTime="131676782140662038" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\HMI\GUIShipM\VCObject.vc"
+    LogicalPath="Software.HMI.GUIShipM.VCObject.vc"
+    Type="File"
+    LastWriteTime="131676782140662038"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Software\Docs\Package.pkg"
+    LogicalPath="Software.Docs"
+    Type="Package"
+    LastWriteTime="131676771098786643" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Physical\CP1486\Config.pkg"
+    LogicalPath="CP1486"
+    Type="Configuration"
+    LastWriteTime="131676754185613268" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Physical\CP1486\Hardware.hw"
+    LogicalPath="CP1486.Hardware.hw"
+    Type="File"
+    LastWriteTime="131676783188379879"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Physical\CP1486\Hardware.hwl"
+    LogicalPath="CP1486.Hardware.hwl"
+    Type="File"
+    LastWriteTime="131341234740000000"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Physical\CP1486\X20CP1486\Cpu.pkg"
+    LogicalPath="CP1486.X20CP1486"
+    Type="Cpu"
+    LastWriteTime="131676783163419835" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Physical\CP1486\X20CP1486\Cpu.sw"
+    LogicalPath="CP1486.X20CP1486.Cpu.sw"
+    Type="File"
+    LastWriteTime="131676782141598039"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Physical\CP1486\X20CP1486\Cpu.per"
+    LogicalPath="CP1486.X20CP1486.Cpu.per"
+    Type="File"
+    LastWriteTime="131676754168921239"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Physical\CP1486\X20CP1486\IoMap.iom"
+    LogicalPath="CP1486.X20CP1486.IoMap.iom"
+    Type="File"
+    LastWriteTime="131676776853012749"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Physical\CP1486\X20CP1486\PvMap.vvm"
+    LogicalPath="CP1486.X20CP1486.PvMap.vvm"
+    Type="File"
+    LastWriteTime="131676754168921239"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Physical\CP1486\X20CP1486\VC\Package.pkg"
+    LogicalPath="CP1486.X20CP1486.VC"
+    Type="Package"
+    LastWriteTime="131676783176523858" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Physical\CP1486\X20CP1486\VC\PS2-Keyboard.dis"
+    LogicalPath="CP1486.X20CP1486.VC.PS2-Keyboard.dis"
+    Type="File"
+    LastWriteTime="131676783165291839"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Physical\CP1486\X20CP1486\VC\PS2-Keyboard1.dis"
+    LogicalPath="CP1486.X20CP1486.VC.PS2-Keyboard1.dis"
+    Type="File"
+    LastWriteTime="131676783177147859"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Physical\CP1486\Hardware.jpg"
+    LogicalPath="CP1486.Hardware.jpg"
+    Type="File"
+    LastWriteTime="131676783981485272"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\AsIecCon\SG4\AsIecCon.h"
+    LogicalPath="AsIecCon.h"
+    Type="File"
+    LastWriteTime="131563453060000000"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\astime\SG4\astime.h"
+    LogicalPath="astime.h"
+    Type="File"
+    LastWriteTime="131563453120000000"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\operator\SG4\operator.h"
+    LogicalPath="operator.h"
+    Type="File"
+    LastWriteTime="131563453160000000"
+    Private="false" />
+  <Object
+    Path="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Logical\Libraries\runtime\SG4\runtime.h"
+    LogicalPath="runtime.h"
+    Type="File"
+    LastWriteTime="131563453160000000"
+    Private="false" />
+</Objects>

@@ -12,6 +12,11 @@
   <Module Name="X20AT4222" Type="X20AT4222" Version="1.2.1.0">
     <Connection Connector="SS1" TargetModule="X20TB12f" TargetConnector="SS" />
     <Connection Connector="SL" TargetModule="X20BM11f" TargetConnector="SL1" />
+    <Parameter ID="FunctionModel" Value="FunctionModel001" />
+    <Parameter ID="SensorType01" Value="PT1000" />
+    <Parameter ID="SensorType02" Value="off" />
+    <Parameter ID="SensorType03" Value="off" />
+    <Parameter ID="SensorType04" Value="off" />
   </Module>
   <Module Name="X20BM11a" Type="X20BM11" Version="1.0.0.1">
     <Connection Connector="X2X1" TargetModule="X20CP1486" TargetConnector="IF6" />
@@ -38,7 +43,28 @@
     <Connection Connector="SS1" TargetModule="X20TB12g" TargetConnector="SS" />
     <Connection Connector="SL" TargetModule="X20BM11g" TargetConnector="SL1" />
   </Module>
-  <Module Name="X20CP1486" Type="X20CP1486" Version="1.1.5.0" />
+  <Module Name="X20CP1486" Type="X20CP1486" Version="1.1.5.0">
+    <Connector Name="IF2">
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Group ID="Vnc1" />
+      <Parameter ID="VncVcObjectName1" Value="GUIShi" />
+      <Parameter ID="VncKeyMappingFile1" Value="VC\PS2-Keyboard.dis" />
+      <Parameter ID="VncAuthentication1" Value="1" />
+      <Parameter ID="VncPasswordViewOnly1" Value="v" />
+      <Parameter ID="VncPasswordViewControl1" Value="c" />
+      <Parameter ID="VncRefreshRate1" Value="200" />
+      <Parameter ID="VncTitle1" Value="Local" />
+      <Group ID="Vnc2" />
+      <Parameter ID="VncVcObjectName2" Value="GUISh1" />
+      <Parameter ID="VncKeyMappingFile2" Value="VC\PS2-Keyboard1.dis" />
+      <Parameter ID="VncAuthentication2" Value="1" />
+      <Parameter ID="VncPasswordViewOnly2" Value="v" />
+      <Parameter ID="VncPasswordViewControl2" Value="c" />
+      <Parameter ID="VncPortNumber2" Value="5901" />
+      <Parameter ID="VncRefreshRate2" Value="200" />
+      <Parameter ID="VncTitle2" Value="Mobile" />
+    </Connector>
+  </Module>
   <Module Name="X20DC1396" Type="X20DC1396" Version="1.1.0.1">
     <Connection Connector="SS1" TargetModule="X20TB12e" TargetConnector="SS" />
     <Connection Connector="SL" TargetModule="X20BM11e" TargetConnector="SL1" />

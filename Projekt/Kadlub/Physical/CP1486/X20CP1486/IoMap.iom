@@ -1,4 +1,4 @@
-
 VAR_CONFIG
-
+	::Ship:Plant[0].aiTemperatura[0] AT %IW."X20AT4222".Temperature01;
+	::Ship:Plant[0].doLampAlarmHiHi[0] AT %QX."X20DO9322".DigitalOutput01;
 END_VAR

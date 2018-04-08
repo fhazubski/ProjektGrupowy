@@ -1,0 +1,1 @@
+Ship	"$(AS_CPU_PATH)/Ship/Main.st.o"  -o "$(AS_CPU_PATH)/Ship/a.out"  -G V4.1.2  -T SG4  -M IA32  -specs=I386specs -Wl, -nostdlib "-Wl,$(AS_GNU_INST_PATH)/i386-elf/lib/libasiec.a"

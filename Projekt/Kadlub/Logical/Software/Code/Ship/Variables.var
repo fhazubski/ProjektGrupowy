@@ -1,0 +1,4 @@
+VAR
+	System : SystemStruct;
+	Plant : ARRAY[0..10] OF PlantStruct;
+END_VAR

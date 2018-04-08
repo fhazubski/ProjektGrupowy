@@ -6,6 +6,7 @@
     <Object Type="File" Description="Permanent variables">Cpu.per</Object>
     <Object Type="File" Description="I/O mapping">IoMap.iom</Object>
     <Object Type="File" Description="Variable mapping">PvMap.vvm</Object>
+    <Object Type="Package">VC</Object>
   </Objects>
   <Configuration ModuleId="X20CP1486">
     <AutomationRuntime Version="E3.10" />
