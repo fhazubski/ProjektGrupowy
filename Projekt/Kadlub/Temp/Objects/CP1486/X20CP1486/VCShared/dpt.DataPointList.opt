@@ -1,9 +1,0 @@
-<BuildOptions>
-  <BuildOption>
-    <SourceFile Value="C:/projects/Stabilizacja_ukladu_statek/ProjektGrupowy_git/Projekt/Kadlub/Physical/CP1486/X20CP1486/Cpu.sw" />
-    <Query Value="/ns:SwConfiguration/ns:TaskClass/*$$Name,Source" />
-    <Xml>
-      <Task Name="Ship" Source="Software.Code.Ship.prg" />
-    </Xml>
-  </BuildOption>
-</BuildOptions>

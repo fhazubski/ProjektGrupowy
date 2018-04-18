@@ -1,4 +1,5 @@
 VAR
 	System : SystemStruct;
-	Plant : ARRAY[0..10] OF PlantStruct;
+	PumpArray : ARRAY[0..2] OF PumpStruct;
+	i : USINT;
 END_VAR

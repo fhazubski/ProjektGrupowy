@@ -1,1 +1,0 @@
-Ship	"$(AS_CPU_PATH)/Ship/a.out" -o "$(AS_CPU_PATH)/Ship/Ship.ox" -T SG4 -r Cyclic4   -G V4.1.2  -B E3.10
