@@ -122,7 +122,7 @@
               <Property Name="Name" Value="Action_0"/>
               <Property Name="ResetValue" Value="0"/>
               <Property Name="SetValue" Value="1"/>
-              <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Software.Code.Ship.i]"/>
+              <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Software.Code.Ship.PumpArray[0].ciIsPumpEnabled]"/>
             </KeyAction>
           </KeyActions>
         </VirtualKey>
@@ -138,7 +138,7 @@
               <Property Name="Name" Value="Action_0"/>
               <Property Name="ResetValue" Value="0"/>
               <Property Name="SetValue" Value="1"/>
-              <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Software.Code.Ship.i]"/>
+              <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Software.Code.Ship.PumpArray[1].ciIsPumpEnabled]"/>
             </KeyAction>
           </KeyActions>
         </VirtualKey>
