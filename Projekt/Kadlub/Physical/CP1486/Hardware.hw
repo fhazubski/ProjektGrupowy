@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?AutomationStudio Version=4.3.5.113 SP?>
+<?AutomationStudio Version=4.3.4.121 SP?>
 <Hardware xmlns="http://br-automation.co.at/AS/Hardware">
   <Module Name="X20AI4632" Type="X20AI4632" Version="1.1.4.0">
     <Connection Connector="SS1" TargetModule="X20TB12c" TargetConnector="SS" />
@@ -13,10 +13,14 @@
     <Connection Connector="SS1" TargetModule="X20TB12f" TargetConnector="SS" />
     <Connection Connector="SL" TargetModule="X20BM11f" TargetConnector="SL1" />
     <Parameter ID="FunctionModel" Value="FunctionModel001" />
-    <Parameter ID="SensorType01" Value="PT1000" />
+    <Parameter ID="SensorType01" Value="off" />
     <Parameter ID="SensorType02" Value="off" />
     <Parameter ID="SensorType03" Value="off" />
     <Parameter ID="SensorType04" Value="off" />
+  </Module>
+  <Module Name="X20BM01" Type="X20BM01" Version="1.0.1.1" />
+  <Module Name="X20BM11" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="X20BM01" TargetConnector="X2X2" />
   </Module>
   <Module Name="X20BM11a" Type="X20BM11" Version="1.0.0.1">
     <Connection Connector="X2X1" TargetModule="X20CP1486" TargetConnector="IF6" />
@@ -38,6 +42,13 @@
   </Module>
   <Module Name="X20BM11g" Type="X20BM11" Version="1.0.0.1">
     <Connection Connector="X2X1" TargetModule="X20BM11f" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BR9300" Type="X20BR9300" Version="1.0.3.0">
+    <Connection Connector="SS1" TargetModule="X20TB12" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM01" TargetConnector="SL1" />
+    <Connection Connector="X2X1" TargetModule="X20BT9100" TargetConnector="X2X1">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.1" />
+    </Connection>
   </Module>
   <Module Name="X20BT9100" Type="X20BT9100" Version="1.0.3.0">
     <Connection Connector="SS1" TargetModule="X20TB12g" TargetConnector="SS" />
@@ -69,6 +80,18 @@
     <Connection Connector="SS1" TargetModule="X20TB12e" TargetConnector="SS" />
     <Connection Connector="SL" TargetModule="X20BM11e" TargetConnector="SL1" />
   </Module>
+  <Module Name="X20DC4395" Type="X20DC4395" Version="1.0.5.0">
+    <Connection Connector="SS1" TargetModule="X20TB12h" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11" TargetConnector="SL1" />
+    <Parameter ID="FunctionModel" Value="FunctionModel001" />
+    <Parameter ID="ConfigChannel0104" Value="Standard" />
+    <Parameter ID="ConfigChannel0102" Value="AB" />
+    <Parameter ID="ConfigChannel0304" Value="Standard" />
+    <Parameter ID="Channel04Config" Value="PWM" />
+    <Parameter ID="ConfigChannel0508" Value="Standard" />
+    <Parameter ID="ConfigChannel0708" Value="Standard" />
+    <Parameter ID="Channel08Config" Value="PWM" />
+  </Module>
   <Module Name="X20DI9371" Type="X20DI9371" Version="1.0.2.0">
     <Connection Connector="SS1" TargetModule="X20TB12a" TargetConnector="SS" />
     <Connection Connector="SL" TargetModule="X20BM11a" TargetConnector="SL1" />
@@ -77,6 +100,7 @@
     <Connection Connector="SS1" TargetModule="X20TB12b" TargetConnector="SS" />
     <Connection Connector="SL" TargetModule="X20BM11b" TargetConnector="SL1" />
   </Module>
+  <Module Name="X20TB12" Type="X20TB12" Version="1.0.0.0" />
   <Module Name="X20TB12a" Type="X20TB12" Version="1.0.0.0" />
   <Module Name="X20TB12b" Type="X20TB12" Version="1.0.0.0" />
   <Module Name="X20TB12c" Type="X20TB12" Version="1.0.0.0" />
@@ -84,4 +108,5 @@
   <Module Name="X20TB12e" Type="X20TB12" Version="1.0.0.0" />
   <Module Name="X20TB12f" Type="X20TB12" Version="1.0.0.0" />
   <Module Name="X20TB12g" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12h" Type="X20TB12" Version="1.0.0.0" />
 </Hardware>

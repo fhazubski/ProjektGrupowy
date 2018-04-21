@@ -8,6 +8,7 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
+	/// switch - dwa tryby - manualny i automatyczny
 	FOR i := 0 TO 2 BY 1 DO 
 		PumpArray[i].doIsPumpEnabled := PumpArray[i].ciIsPumpEnabled;
 		PumpArray[i].aoPumpSpeed := 1;
