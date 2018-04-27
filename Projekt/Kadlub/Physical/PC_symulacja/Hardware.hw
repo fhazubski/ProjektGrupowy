@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.3.4.121 SP?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="PC" Type="PC_any" Version="1.1.0.0" OrderNumber="PC">
+    <Connector Name="IF3">
+      <Group ID="Vnc1" />
+      <Parameter ID="VncVcObjectName1" Value="GUIShi" />
+      <Parameter ID="VncAuthentication1" Value="1" />
+      <Parameter ID="VncPasswordViewOnly1" Value="v" />
+      <Parameter ID="VncPasswordViewControl1" Value="c" />
+      <Parameter ID="VncRefreshRate1" Value="100" />
+      <Group ID="Vnc2" />
+      <Parameter ID="VncVcObjectName2" Value="GUISh1" />
+      <Parameter ID="VncAuthentication2" Value="1" />
+      <Parameter ID="VncPasswordViewOnly2" Value="v" />
+      <Parameter ID="VncPasswordViewControl2" Value="c" />
+      <Parameter ID="VncPortNumber2" Value="5901" />
+      <Parameter ID="VncRefreshRate2" Value="100" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="Kadlub_PC_symulacja" />
+  </Module>
+</Hardware>

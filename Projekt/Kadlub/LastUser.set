@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio Version="4.3.4.121 SP"?>
 <ProjectSettings xmlns="http://br-automation.co.at/AS/ProjectSettings">
-  <ConfigurationManager ActiveConfigurationName="CP1486" />
+  <ConfigurationManager ActiveConfigurationName="PC_symulacja" />
   <Deployment Value="ActiveCpu" />
   <ExportProject ExportFilePath="C:\projects\Stabilizacja_ukladu_statek\ProjektGrupowy_git\Projekt\Kadlub\Kadlub.zip" />
   <Print Footer="%cPage: %p" Header="%lProject: %n%c%x" />
