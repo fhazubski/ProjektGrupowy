@@ -1,0 +1,8 @@
+VAR_CONFIG
+	::Ship:Ship.coPump1 AT %QX."X20DO9322".DigitalOutput01;
+	::Ship:Ship.coPump2 AT %QX."X20DO9322".DigitalOutput02;
+	::Ship:Ship.cpButtonStart AT %IX."X20DI9371".DigitalInput01;
+	::Ship:Ship.cpButtonStop AT %IX."X20DI9371".DigitalInput02;
+	::Ship:Ship.cpButtonCalibrate  AT %IX."X20DI9371".DigitalInput03;
+	::Ship:Ship.cpSystemActive AT %QX."X20DO9322".DigitalOutput03;
+END_VAR

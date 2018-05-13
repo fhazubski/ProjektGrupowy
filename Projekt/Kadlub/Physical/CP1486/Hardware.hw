@@ -49,6 +49,7 @@
     <Connection Connector="X2X1" TargetModule="X20BT9100" TargetConnector="X2X1">
       <Cable Type="X2XCable" Length="10" Version="1.0.0.1" />
     </Connection>
+    <Parameter ID="Supervision" Value="off" />
   </Module>
   <Module Name="X20BT9100" Type="X20BT9100" Version="1.0.3.0">
     <Connection Connector="SS1" TargetModule="X20TB12g" TargetConnector="SS" />
@@ -84,6 +85,7 @@
     <Connection Connector="SS1" TargetModule="X20TB12h" TargetConnector="SS" />
     <Connection Connector="SL" TargetModule="X20BM11" TargetConnector="SL1" />
     <Parameter ID="FunctionModel" Value="FunctionModel001" />
+    <Parameter ID="Supervision" Value="off" />
     <Parameter ID="ConfigChannel0104" Value="Standard" />
     <Parameter ID="ConfigChannel0102" Value="AB" />
     <Parameter ID="ConfigChannel0304" Value="Standard" />

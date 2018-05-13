@@ -1,21 +1,43 @@
 PROGRAM _INIT
-	FOR i := 0 TO 2 BY 1 DO 
-		PumpArray[i].ciIsPumpEnabled := FALSE;
-		PumpArray[i].ciPumpSpeed := 0;	
-		PumpArray[i].doIsPumpEnabled := FALSE;
-		PumpArray[i].aoPumpSpeed := 0;
-	END_FOR
+	Parameters.PumpSpeed := 500;
+	
+	Ship.coPump1        := 0;
+	Ship.coPump2        := 0;
+	Ship.cpSystemActive := FALSE;
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	/// switch - dwa tryby - manualny i automatyczny
-	FOR i := 0 TO 2 BY 1 DO 
-		PumpArray[i].doIsPumpEnabled := PumpArray[i].ciIsPumpEnabled;
-		PumpArray[i].aoPumpSpeed := 1;
-	END_FOR;
+	IF Ship.cpButtonCalibrate THEN
+		Ship.cpEncoderZero := Ship.aiEncoder;
+	END_IF;
+	
+	Ship.cpSystemActive :=
+	( NOT Ship.cpButtonStop ) AND
+	( Ship.cpButtonStart OR Ship.cpSystemActive );
+
+
+	IF ( Ship.cpSystemActive ) AND
+		( Ship.aiEncoder < Ship.cpEncoderZero ) THEN
+		Ship.coPump1 := Parameters.PumpSpeed;
+	ELSE
+		Ship.coPump1 := 0;
+	END_IF;
+	
+	IF ( Ship.cpSystemActive ) AND
+		( Ship.aiEncoder > Ship.cpEncoderZero ) THEN
+		Ship.coPump2 := Parameters.PumpSpeed;
+	ELSE
+		Ship.coPump2 := 0;
+	END_IF;
+
+
+	Ship.cpButtonStart := FALSE;
+	Ship.cpButtonStop := FALSE;
+	Ship.cpButtonCalibrate := FALSE;	
 END_PROGRAM
 
 PROGRAM _EXIT
-	// Empty
+	Ship.coPump1 := 0;
+	Ship.coPump2 := 0;
 END_PROGRAM
 

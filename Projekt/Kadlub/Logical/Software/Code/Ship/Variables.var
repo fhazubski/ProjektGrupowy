@@ -1,5 +1,4 @@
 VAR
-	System : SystemStruct;
-	PumpArray : ARRAY[0..2] OF PumpStruct;
-	i : USINT;
+	Parameters : ParametersStruct;
+	Ship : ShipStruct;
 END_VAR

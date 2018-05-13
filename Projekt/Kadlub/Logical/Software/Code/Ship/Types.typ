@@ -1,17 +1,16 @@
 
 TYPE
-	PumpStruct : 	STRUCT 
-		doIsPumpEnabled : BOOL;
-		aoPumpSpeed : REAL;
-		ciIsPumpEnabled : BOOL;
-		ciPumpSpeed : REAL;
+	ParametersStruct : 	STRUCT 
+		PumpSpeed : REAL;
 	END_STRUCT;
-	SystemStruct : 	STRUCT 
-		uiStop : BOOL;
-		uiStart : BOOL;
-		diStop : BOOL;
-		diStart : BOOL;
-		uiSystemAktywny : BOOL;
-		doSystemAktywny : BOOL;
+	ShipStruct : 	STRUCT 
+		aiEncoder : REAL;
+		cpEncoderZero : REAL;
+		coPump1 : REAL;
+		coPump2 : REAL;
+		cpButtonStart : BOOL;
+		cpButtonStop : BOOL;
+		cpButtonCalibrate : BOOL;
+		cpSystemActive : BOOL;
 	END_STRUCT;
 END_TYPE

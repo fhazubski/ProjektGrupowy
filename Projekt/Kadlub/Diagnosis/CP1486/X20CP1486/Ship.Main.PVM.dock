@@ -1,11 +1,13 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Ship 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=150 Type=0 Scope=0 Force=0 Index=3 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=150 Type=0 Scope=0 Force=0 Index=1 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                                   Plant                       PlantStruct[0..10]    0 "                                                               *"    0   24   11    0    1    1         
-                                Plant[0]                              PlantStruct    0 "                                                               *"    1   24    1    0    1    1         
-                       uiTemperaturaHiHi                              REAL[0..10]    0 "                                                               *"    2    8   11    0    0    1         
-                    uiTemperaturaHiHi[0]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                         doLampAlarmHiHi                              BOOL[0..10]    0 "                                                               *"    2    1   11    0    0    1         
-                      doLampAlarmHiHi[0]                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                           uiTemperatura                              REAL[0..10]    0 "                                                               *"    2    8   11    0    0    1         
-                        uiTemperatura[0]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                    Ship                               ShipStruct    0 "                                                               *"    0   24    1    0    1    1         
+                               aiEncoder                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+                           cpEncoderZero                                     REAL    0 "                                                             2.0"    1    8    1   10    0    0         
+                                 coPump1                                     BOOL    3 "                                                           FALSE"    1    1    1    2    0    0         
+                                 coPump2                                     BOOL    3 "                                                           FALSE"    1    1    1    2    0    0         
+                           cpButtonStart                                     BOOL    1 "                                                           FALSE"    1    1    1    2    0    0         
+                            cpButtonStop                                     BOOL    1 "                                                           FALSE"    1    1    1    2    0    0         
+                       cpButtonCalibrate                                     BOOL    1 "                                                           FALSE"    1    1    1    2    0    0         
+                          cpSystemActive                                     BOOL    3 "                                                           FALSE"    1    1    1    2    0    0         
+                                   Plant                       PlantStruct[0..10]    0 "                                                               *"    0   24   11    0    1    0         

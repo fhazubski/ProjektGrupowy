@@ -13,6 +13,6 @@
     <Build GccVersion="4.1.2" />
     <DefaultTargetMemory Tasks="UserROM" />
     <Vc FirmwareVersion="V4.34.1" />
-    <OnlineConfiguration Name="X20CP1486" DeviceType="TCPIP" DeviceParameters="/IF=tcpip /LOPO=11159 /SA=90" ConnectionParameters="/RT=1000 /AM=* /SDT=5 /DAIP=82.145.73.127 /REPO=11159 /ANSL=1 /PT=11169" Description="" />
+    <OnlineConfiguration Name="X20CP1486" DeviceType="TCPIP" DeviceParameters="/IF=tcpip /LOPO=11159 /SA=90" ConnectionParameters="/RT=1000 /AM=* /SDT=5 /DAIP=82.145.73.163 /REPO=11159 /ANSL=1 /PT=11169" Description="" />
   </Configuration>
 </Cpu>
