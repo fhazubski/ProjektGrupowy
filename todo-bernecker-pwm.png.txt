@@ -1,0 +1,11 @@
+dazymy do 10 kHz pracy urzadzenia (zgadujemy, ¿e optymalne s¹ 5-10 kHz):
+PWM prescale
+Je¿eli silnik piszczy, dzia³a g³oœno, to prawdopodobnie czêstotliwoœæ jest zbyt du¿a
+
+Prescale = ile_chcemy_hercow / 48000, np prescale = 10000 /  48000, prawdopodobnie 4, lub 5
+
+
+
+
+loopconr - biblioteka, np funkcja scale - funkcja regulatora P i D
+moc wyjscia K*e

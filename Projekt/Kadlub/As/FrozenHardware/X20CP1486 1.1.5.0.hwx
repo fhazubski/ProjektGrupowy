@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Module xmlns="http://br-automation.co.at/AS/HardwareModule" Version="1.1.5.0" Description-de="X20 CPU Celeron 650, POWERLINK, 1x IF" Description-en="X20 CPU Celeron 650, POWERLINK, 1x IF" Description-fr="X20 CPU Celeron 650, POWERLINK, 1x IF" SlotWidth="1" Width="150" Height="103">
+  <Aprol>
+    <Config ID="Supported" FromVersion="APROL R 3.3-70" Recommended="true" />
+  </Aprol>
+  <Channels Target="SG4">
+    <Channel ID="SerialNumber" HwdResource="IO" Description-de="Seriennummer" Description-en="Serial number">
+      <Parameter ID="Ext" Value="/HW" Type="STRING" />
+      <Parameter ID="Address" Value="0" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" Type="STRING" />
+      <Parameter ID="Type" Value="UDINT" Type="STRING" />
+      <Parameter ID="Sig_St_Udint" Value="1" Type="STRING" />
+      <Parameter ID="ChannelType" Value="SerialNumber" Type="STRING" />
+    </Channel>
+    <Channel ID="ModuleID" HwdResource="IO" Description-de="Modulkennung" Description-en="Module ID">
+      <Parameter ID="Ext" Value="/HW" Type="STRING" />
+      <Parameter ID="Address" Value="1" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" Type="STRING" />
+      <Parameter ID="Type" Value="UINT" Type="STRING" />
+      <Parameter ID="Sig_St_Uint" Value="1" Type="STRING" />
+      <Parameter ID="ChannelType" Value="ModuleID" Type="STRING" />
+    </Channel>
+    <Separator />
+    <Channel ID="ModeSwitch" HwdResource="IO" Description-de="Mode Schalter" Description-en="Mode switch">
+      <Parameter ID="Ext" Value="/HW" Type="STRING" />
+      <Parameter ID="Address" Value="2" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" Type="STRING" />
+      <Parameter ID="Type" Value="USINT" Type="STRING" />
+      <Parameter ID="Sig_St_Byte" Value="1" Type="STRING" />
+      <Parameter ID="ChannelType" Value="Mode" Type="STRING" />
+    </Channel>
+    <Separator />
+    <Channel ID="BatteryStatusCPU" HwdResource="IO" Description-de="Batterie Status CPU (0 = Batterie leer oder nicht vorhanden, 1 = Batterie OK)" Description-en="Battery status CPU (0 = battery low or missing, 1 = battery ok,)">
+      <Parameter ID="Ext" Value="/HW" Type="STRING" />
+      <Parameter ID="Address" Value="3" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" Type="STRING" />
+      <Parameter ID="Type" Value="USINT" Type="STRING" />
+      <Parameter ID="Sig_St_Byte" Value="1" Type="STRING" />
+      <Parameter ID="ChannelType" Value="Battery" Type="STRING" />
+      <Parameter ID="BatteryDetectionMethod" Value="1" Type="UDINT" />
+      <Parameter ID="Ordinal" Value="2" Type="UDINT" />
+    </Channel>
+    <Separator />
+    <Channel ID="TemperatureCPU" HwdResource="IO" Description-de="Temperatur CPU [1/10C]" Description-en="Temperature CPU [1/10C]">
+      <Parameter ID="Ext" Value="/HW" Type="STRING" />
+      <Parameter ID="Address" Value="4" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" Type="STRING" />
+      <Parameter ID="Type" Value="UINT" Type="STRING" />
+      <Parameter ID="Sig_Temp_CpuTemp" Value="1" Type="STRING" />
+      <Parameter ID="ChannelType" Value="Temp" Type="STRING" />
+      <Parameter ID="Ordinal" Value="1" Type="UDINT" />
+    </Channel>
+    <Channel ID="TemperatureENV" HwdResource="IO" Description-de="Temperatur Kühlblech [1/10C]" Description-en="Temperature cooling plate [1/10C]">
+      <Parameter ID="Ext" Value="/HW" Type="STRING" />
+      <Parameter ID="Address" Value="5" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" Type="STRING" />
+      <Parameter ID="Type" Value="UINT" Type="STRING" />
+      <Parameter ID="Sig_Temp_CpuTemp" Value="1" Type="STRING" />
+      <Parameter ID="ChannelType" Value="Temp" Type="STRING" />
+      <Parameter ID="Ordinal" Value="2" Type="UDINT" />
+    </Channel>
+    <Separator />
+    <Channel ID="FanOk" HwdResource="IO" Description-de="Lüfter Status (1 = Lüfter ok)" Description-en="Fan status (1 = fan ok)">
+      <Parameter ID="Ext" Value="/HW" Type="STRING" />
+      <Parameter ID="Address" Value="6" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" Type="STRING" />
+      <Parameter ID="Type" Value="BOOL" Type="STRING" />
+      <Parameter ID="Sig_St_Bool" Value="1" Type="STRING" />
+      <Parameter ID="ChannelType" Value="FanOk" Type="STRING" />
+    </Channel>
+    <Separator />
+    <Channel ID="SystemTime" FromVersion="I2.90" HwdResource="IO" Description-de="Systemzeit beim Start des aktuellen Taskklassenzyklus [µs]" Description-en="System time at the start of the current task cycle [µs]">
+      <Parameter ID="Ext" Value="/HW" Type="STRING" />
+      <Parameter ID="Address" Value="9" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" Type="STRING" />
+      <Parameter ID="Type" Value="DINT" Type="STRING" />
+      <Parameter ID="Sig_St_Dint" Value="1" Type="STRING" />
+      <Parameter ID="ChannelType" Value="SystemTime" Type="STRING" />
+    </Channel>
+    <Separator />
+    <Channel ID="StatusInput01" FromVersion="V2.92" HwdResource="IO" Description-de="I/O Versorgungswarnung (0 = DC OK)" Description-en="I/O power supply warning (0 = DC OK)">
+      <Parameter ID="Ext" Value="/HW" Type="STRING" />
+      <Parameter ID="Address" Value="8" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" Type="STRING" />
+      <Parameter ID="Type" Value="BOOL" Type="STRING" />
+      <Parameter ID="Sig_St_Bool" Value="1" Type="STRING" />
+      <Parameter ID="ChannelType" Value="StatusInput" Type="STRING" />
+      <Parameter ID="Ordinal" Value="2" Type="UDINT" />
+    </Channel>
+  </Channels>
+  <Classification>
+    <HardwareModuleFamily Value="X20" />
+    <HardwareModuleType Value="CPU" />
+    <NetworkType Value="Ethernet" />
+    <NetworkType Value="Powerlink" />
+    <NetworkType Value="Serial" />
+    <NetworkType Value="X2X" />
+    <WizardType Value="NewConfiguration" />
+  </Classification>
+  <Connectors>
+    <Connector Name="IF1" Label="Serial" LastNumber="1" Male="true" Type="Cable">
+      <Connections>
+        <Connection Name="RS232" />
+      </Connections>
+      <Editors>
+        <Editor Name="Configuration" Target="SG4" />
+      </Editors>
+      <Layout PositionX="140" PositionY="30" />
+      <Properties Target="SG4">
+        <Include File="ArCfgSer232" />
+        <Parameter ID="DeviceParam" Value="/IR=4 /IO=0x3F8 /CLK=3686400 /CARD=68 /IF=1" Visible="false" SysConfPath="DEVICES:%NW_ADDRESS%:DeviceParam" ArConfigSkip="true" />
+      </Properties>
+    </Connector>
+    <Connector Name="IF2" DaisyChain="true" Label="ETH" LastNumber="254" Male="true" NodeSwitch="true" Type="Cable">
+      <Channels Target="SG4">
+        <Channel ID="NodeSwitch" HwdResource="IO" HwdPrefix="IF2" Description-de="Node Schalter" Description-en="Node switch">
+          <Parameter ID="Ext" Value="/HW" Type="STRING" />
+          <Parameter ID="Address" Value="7" Type="UDINT" />
+          <Parameter ID="Direction" Value="IN" Type="STRING" />
+          <Parameter ID="Type" Value="USINT" Type="STRING" />
+          <Parameter ID="Sig_St_Byte" Value="1" Type="STRING" />
+          <Parameter ID="ChannelType" Value="Node" Type="STRING" />
+          <Parameter ID="Device" Value="PCI.IF2" Type="STRING" />
+        </Channel>
+      </Channels>
+      <Connections>
+        <Connection Name="Ethernet" />
+      </Connections>
+      <Editors>
+        <Editor Name="Configuration" Target="SG4" />
+        <Editor Name="IoMapping" Target="SG4" />
+      </Editors>
+      <Layout PositionX="28" PositionY="83" />
+      <Properties Target="SG4">
+        <Include File="ArCfgEthFei" />
+        <Parameter ID="DeviceParam" Value="/EDDN=fei" Visible="false" SysConfPath="DEVICES:%NW_ADDRESS%:DeviceParam" ArConfigSkip="true" />
+      </Properties>
+    </Connector>
+    <Connector Name="IF3" DaisyChain="true" Label="PLK" LastNumber="253" Type="Cable">
+      <Channels Target="SG4">
+        <Channel ID="NodeSwitch" FromVersion="B2.87" HwdResource="IF3" Description-de="Wert am Knotennummernschalter" Description-en="Selected node switch value">
+          <Parameter ID="Ext" Value="/INFO" Type="STRING" />
+          <Parameter ID="Address" Value="0x80000019" Type="UDINT" />
+          <Parameter ID="Direction" Value="IN" Type="STRING" />
+          <Parameter ID="Type" Value="USINT" Type="STRING" />
+          <Parameter ID="Sig_St_Byte" Value="1" Type="STRING" />
+        </Channel>
+        <Channel ID="LinkOk" FromVersion="P2.90" HwdResource="IF3" Description-de="Link-Status" Description-en="Link state">
+          <Parameter ID="Ext" Value="/INFO" Type="STRING" />
+          <Parameter ID="Address" Value="0x8000001A" Type="UDINT" />
+          <Parameter ID="BitOffset" Value="0" Type="UDINT" />
+          <Parameter ID="Direction" Value="IN" Type="STRING" />
+          <Parameter ID="Type" Value="BOOL" Type="STRING" />
+          <Parameter ID="Sig_St_Bool" Value="1" Type="STRING" />
+        </Channel>
+        <Include File="ChannelsPwl-1" HwdResource="IF3" />
+      </Channels>
+      <Connections>
+        <Connection Name="Ethernet" />
+        <Connection Name="Powerlink" />
+      </Connections>
+      <Editors>
+        <Editor Name="Configuration" Target="SG4" />
+        <Editor Name="IoMapping" Target="SG4" />
+      </Editors>
+      <Layout PositionX="52" PositionY="83" />
+      <Properties Target="SG4">
+        <Include File="ArCfgEplV2ForceNode" />
+      </Properties>
+    </Connector>
+    <Connector Name="IF4" Label="USB" LastNumber="32" Male="true" MaxConnections="32" Type="Cable">
+      <Connections>
+        <Connection Name="USB" />
+      </Connections>
+      <Layout PositionX="97" PositionY="83" />
+    </Connector>
+    <Connector Name="IF5" Label="USB" LastNumber="32" Male="true" MaxConnections="32" Type="Cable">
+      <Connections>
+        <Connection Name="USB" />
+      </Connections>
+      <Layout PositionX="97" PositionY="67" />
+    </Connector>
+    <Connector Name="IF6" Back="true" DaisyChain="true" Label="X2X" LastNumber="253" Type="Plug">
+      <Channels>
+        <Include File="ChannelsX2X" />
+      </Channels>
+      <Connections>
+        <Connection Name="X20Bus" />
+      </Connections>
+      <Editors>
+        <Editor Name="Configuration" Target="SG4" />
+        <Editor Name="IoMapping" Target="SG4" />
+      </Editors>
+      <Layout PositionX="150" PositionY="0" />
+      <Properties Target="SG4">
+        <Include File="ArCfgX2X" />
+      </Properties>
+    </Connector>
+    <Connector Name="SS1" Label="SUBSLOT1" PhysicalName="PCI" Type="Plug">
+      <Connections>
+        <Connection Name="X20Pci" />
+      </Connections>
+      <Layout PositionX="112" PositionY="10" />
+    </Connector>
+  </Connectors>
+  <Editors>
+    <Editor Name="IoMapping" Target="SG4" />
+    <Editor Name="Configuration" Target="SG4" />
+    <Editor Name="Software" Target="SG4" />
+    <Editor Name="Permanent" Target="SG4" />
+    <Editor Name="PvPvMapping" Target="SG4" />
+  </Editors>
+  <Firmware Folder="X20CP1486">
+    <Target FromVersion="A2.92" Name="SG4" SubFolder="1" />
+  </Firmware>
+  <HWD Target="SG4">
+    <Parameter ID="Transparent" Value="1" Type="UDINT" />
+    <Parameter ID="HwcCpuSlot" Value="0" Type="UDINT" />
+    <Parameter ID="HwcCpuStation" Value="0" Type="UDINT" />
+    <Parameter ID="Fan" Value="1" Type="UDINT" />
+    <Parameter ID="HwcShortName" Value="CP1486" />
+    <Resource ID="IO">
+      <Parameter ID="Transparent" Value="1" Type="UDINT" />
+      <Parameter ID="Classcode" Value="0x20000022" Type="UDINT" />
+      <Parameter ID="ARIOMaster" Value="1" Type="UDINT" />
+    </Resource>
+    <Resource ID="IF1">
+      <Parameter ID="IoBase0" Value="0x3f8" Type="UDINT" />
+      <Parameter ID="Interrupt" Value="4" Type="UDINT" />
+      <Parameter ID="Classcode" Value="0x02000700" Type="UDINT" FromVersion="A2.87" />
+    </Resource>
+    <Resource ID="PCI">
+      <Parameter ID="Transparent" Value="1" Type="UDINT" />
+      <Parameter ID="Classcode" Value="0x20000000" Type="UDINT" />
+      <Parameter ID="OfferedBus" Value="X20PCI" />
+      <Parameter ID="BusPrefix" Value="SS" />
+      <Parameter ID="BusMinSlot" Value="1" Type="UDINT" />
+      <Parameter ID="BusMaxSlot" Value="1" Type="UDINT" />
+      <Slot ID="SS1">
+        <Parameter ID="BusAddress" Value="0x0d" Type="UDINT" />
+      </Slot>
+      <Resource ID="SRAMIO">
+        <Parameter ID="BusAddress" Value="0x12" Type="UDINT" />
+        <Parameter ID="Transparent" Value="1" Type="UDINT" />
+        <Resource ID="SRAM">
+          <Parameter ID="PCIFuncNo" Value="0" Type="UDINT" />
+        </Resource>
+        <Resource ID="SYSIO">
+          <Parameter ID="PCIFuncNo" Value="1" Type="UDINT" />
+        </Resource>
+      </Resource>
+      <Resource ID="IF2">
+        <Parameter ID="BusAddress" Value="0x14" Type="UDINT" />
+        <Parameter ID="PCIFuncNo" Value="0" Type="UDINT" />
+        <Parameter ID="MemEnable" Value="0" Type="UDINT" />
+        <Parameter ID="NodeDetectionMethod" Value="5" Type="UDINT" />
+        <Parameter ID="OfferedBus" Value="ETHERNET" />
+      </Resource>
+      <Resource ID="METAUSB" FromVersion="A2.94">
+        <Parameter ID="BusAddress" Value="0x7" Type="UDINT" />
+        <Parameter ID="Transparent" Value="1" Type="UDINT" />
+        <Resource ID="METAFUNC0">
+          <Parameter ID="PCIFuncNo" Value="0" Type="UDINT" />
+          <Parameter ID="MemEnable" Value="0" Type="UDINT" />
+          <Parameter ID="Transparent" Value="1" Type="UDINT" />
+        </Resource>
+        <Resource ID="METAFUNC1">
+          <Parameter ID="PCIFuncNo" Value="1" Type="UDINT" />
+          <Parameter ID="MemEnable" Value="0" Type="UDINT" />
+          <Parameter ID="Transparent" Value="1" Type="UDINT" />
+        </Resource>
+        <Resource ID="METAFUNC2">
+          <Parameter ID="PCIFuncNo" Value="2" Type="UDINT" />
+          <Parameter ID="MemEnable" Value="0" Type="UDINT" />
+          <Parameter ID="Transparent" Value="1" Type="UDINT" />
+          <Resource ID="IF4">
+            <Parameter ID="OfferedBus" Value="USB" />
+            <Parameter ID="PortNo" Value="0" Type="UDINT" />
+          </Resource>
+          <Resource ID="IF5">
+            <Parameter ID="OfferedBus" Value="USB" />
+            <Parameter ID="PortNo" Value="1" Type="UDINT" />
+          </Resource>
+        </Resource>
+        <Resource ID="METAFUNC3">
+          <Parameter ID="PCIFuncNo" Value="3" Type="UDINT" />
+          <Parameter ID="MemEnable" Value="0" Type="UDINT" />
+          <Parameter ID="Transparent" Value="1" Type="UDINT" />
+        </Resource>
+      </Resource>
+      <Resource ID="PLKX2X">
+        <Parameter ID="BusAddress" Value="0x13" Type="UDINT" />
+        <Parameter ID="Transparent" Value="1" Type="UDINT" />
+        <Resource ID="IF3">
+          <Parameter ID="FirmwareFile" Value="8548b0.epl" />
+          <Parameter ID="PCIFuncNo" Value="0" Type="UDINT" />
+          <Parameter ID="OfferedBus" Value="PLIF" ToVersion="Z2.89" />
+          <Parameter ID="OfferedBus" Value="P2IF" FromVersion="A2.90" />
+          <Parameter ID="InterfaceType" Value="POWERLINK" FromVersion="A3.08" />
+          <Parameter ID="MemEnable" Value="0" Type="UDINT" />
+          <Parameter ID="MemEnableIfArio" Value="1" Type="UDINT" />
+          <Parameter ID="IOSuffix" Value=":PLK.BUS" />
+          <Resource ID="ETH" FromVersion="A2.90">
+            <Parameter ID="Transparent" Value="1" Type="UDINT" />
+            <Parameter ID="Classcode" Value="0x00000200" Type="UDINT" />
+            <Parameter ID="AutoPlug" Value="1" Type="UDINT" />
+            <Parameter ID="OfferedBus" Value="ETHERNET" />
+          </Resource>
+        </Resource>
+        <Resource ID="IF6">
+          <Parameter ID="PCIFuncNo" Value="1" Type="UDINT" />
+          <Parameter ID="OfferedBus" Value="X2XIF" />
+          <Parameter ID="InterfaceType" Value="X2X" FromVersion="A3.08" />
+          <Parameter ID="MemEnable" Value="0" Type="UDINT" />
+          <Parameter ID="MemEnableIfArio" Value="1" Type="UDINT" />
+          <Parameter ID="MemLen0" Value="0x20000" Type="UDINT" />
+          <Parameter ID="IOSuffix" Value="X2X.BUS" />
+        </Resource>
+      </Resource>
+    </Resource>
+  </HWD>
+  <Images>
+    <Image Type="FrontFoto" Name="X20CP1486.front.png" />
+    <Image Type="Icon" Name="hw_ar.ico" />
+  </Images>
+  <Memory Default="UserROM" Size="1031936">
+    <DRAM Transfer="true" />
+    <RemMem Transfer="false" DeviceParam="/DIRECT=0" DriverName="DdxxNvSRAM" />
+    <SystemROM Transfer="true" />
+    <UserRAM Transfer="true" DeviceParam="/DIRECT=1" DriverName="DdxxNvSRAM" />
+    <UserROM Transfer="true" />
+  </Memory>
+  <Properties Target="SG4">
+    <Include File="ArCfgCpuX20CP1486" />
+  </Properties>
+  <Runtime Target="SG4" ToVersion="Z3.99" BuildError="true" AutomationRuntime="X20CP1486">
+    <DeviceDrivers>
+      <Driver ID="File" Name="DdVxFiLowio" />
+      <Driver ID="Serial" Name="DdxxSf16x5xIO" />
+      <Driver ID="serx2x" Name="DdVxSfX67" />
+      <Driver ID="CAN" Name="DdVxCnLs172" />
+    </DeviceDrivers>
+    <InaDrivers>
+      <Driver ID="Serial" Name="FbSerial" />
+      <Driver ID="CAN" Name="FbCan" />
+      <Driver ID="Ethernet" Name="FbEthUdp" />
+    </InaDrivers>
+  </Runtime>
+  <Upload ModuleNr="8548" ModuleType="CPU" />
+</Module>

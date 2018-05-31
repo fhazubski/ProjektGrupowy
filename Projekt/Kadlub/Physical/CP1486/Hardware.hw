@@ -55,7 +55,7 @@
     <Connection Connector="SS1" TargetModule="X20TB12g" TargetConnector="SS" />
     <Connection Connector="SL" TargetModule="X20BM11g" TargetConnector="SL1" />
   </Module>
-  <Module Name="X20CP1486" Type="X20CP1486" Version="1.1.5.0">
+  <Module Name="X20CP1486" Type="X20CP1486" LastFrozenVersion="1.1.5.0" Version="1.1.5.0">
     <Connector Name="IF2">
       <Parameter ID="ActivateDevice" Value="1" />
       <Group ID="Vnc1" />
@@ -84,15 +84,16 @@
   <Module Name="X20DC4395" Type="X20DC4395" Version="1.0.5.0">
     <Connection Connector="SS1" TargetModule="X20TB12h" TargetConnector="SS" />
     <Connection Connector="SL" TargetModule="X20BM11" TargetConnector="SL1" />
-    <Parameter ID="FunctionModel" Value="FunctionModel001" />
     <Parameter ID="Supervision" Value="off" />
     <Parameter ID="ConfigChannel0104" Value="Standard" />
     <Parameter ID="ConfigChannel0102" Value="AB" />
     <Parameter ID="ConfigChannel0304" Value="Standard" />
     <Parameter ID="Channel04Config" Value="PWM" />
+    <Parameter ID="PWMPrescale04" Value="4" />
     <Parameter ID="ConfigChannel0508" Value="Standard" />
     <Parameter ID="ConfigChannel0708" Value="Standard" />
     <Parameter ID="Channel08Config" Value="PWM" />
+    <Parameter ID="PWMPrescale08" Value="4" />
   </Module>
   <Module Name="X20DI9371" Type="X20DI9371" Version="1.0.2.0">
     <Connection Connector="SS1" TargetModule="X20TB12a" TargetConnector="SS" />

@@ -23,21 +23,21 @@
     <Module Name="X20BT9100" Type="X20BT9100" X="328" Y="100" />
     <Module Name="X20TB12g" Type="X20TB12" X="328" Y="127" />
     <Module Name="X20CP1486" Type="X20CP1486" X="100" Y="100" />
-    <Module Name="X20BM01" Type="X20BM01" X="412.5" Y="100" />
-    <Module Name="X20BR9300" Type="X20BR9300" X="412.5" Y="100" />
-    <Module Name="X20TB12" Type="X20TB12" X="412.5" Y="127" />
-    <Module Name="X20BM11" Type="X20BM11" X="425.5" Y="100" />
-    <Module Name="X20DC4395" Type="X20DC4395" X="425.5" Y="100" />
-    <Module Name="X20TB12h" Type="X20TB12" X="425.5" Y="127" />
+    <Module Name="X20BM01" Type="X20BM01" X="412" Y="100" />
+    <Module Name="X20BR9300" Type="X20BR9300" X="412" Y="100" />
+    <Module Name="X20TB12" Type="X20TB12" X="412" Y="127" />
+    <Module Name="X20BM11" Type="X20BM11" X="425" Y="100" />
+    <Module Name="X20DC4395" Type="X20DC4395" X="425" Y="100" />
+    <Module Name="X20TB12h" Type="X20TB12" X="425" Y="127" />
   </Modules>
   <Links>
-    <Link From="X20BT9100" To="X20BR9300" FromPort="X2X1" ToPort="X2X1" IsRoutedByUser="False">
-      <Point X="335" Y="144" />
-      <Point X="335" Y="144" />
+    <Link From="X20BR9300" To="X20BT9100" FromPort="X2X1" ToPort="X2X1" IsRoutedByUser="False">
+      <Point X="418" Y="144" />
+      <Point X="418" Y="144" />
+      <Point X="411" Y="144" />
       <Point X="342" Y="144" />
-      <Point X="411.5" Y="144" />
-      <Point X="418.5" Y="144" />
-      <Point X="418.5" Y="144" />
+      <Point X="335" Y="144" />
+      <Point X="335" Y="144" />
     </Link>
   </Links>
   <InfoElements />

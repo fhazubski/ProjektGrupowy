@@ -12,7 +12,7 @@
   <Property Name="DefaultKeyLevelNumeric" Value="0"/>
   <Property Name="DefaultKeyLevelString" Value="0"/>
   <Property Name="DefaultLanguage" Value="en"/>
-  <Property Name="DefaultPage" Value="Source[local].Page[Init_Page]"/>
+  <Property Name="DefaultPage" Value="Source[local].Page[ADMIN]"/>
   <Property Name="DefaultStyleSheet" Value="Source[local].StyleSheet[Color]"/>
   <Property Name="FocusControlDatapoint" Value="None"/>
   <Property Name="FontAntialiasing" Value="Off"/>
@@ -126,7 +126,10 @@
     <Source File="BitmapGroups\AcknowledgeState.bmgrp"/>
     <Source File="BitmapGroups\NavigationPad.bmgrp"/>
     <Source File="BitmapGroups\Borders.bmgrp"/>
-    <Source File="Pages\Init_Page.page"/>
+    <Source File="Pages\ADMIN.page"/>
+    <Source File="Pages\Page_1.page"/>
+    <Source File="Pages\TEST.page"/>
+    <Source File="Pages\password_box.page"/>
     <Source File="StyleSheets\Gray.vcs"/>
     <Source File="StyleSheets\Color.vcs"/>
     <Source File="Borders\Raised.bdr"/>
@@ -170,6 +173,7 @@
     <Source File="TouchPads\NavigationPad_hor.tpr"/>
     <Source File="TouchPads\EditPad.tpr"/>
     <Source File="Trends\TrendData.tdc"/>
+    <Source File="ColorMaps\StateColor.clm"/>
     <Source File="VirtualKeys.vcvk"/>
     <Source File="Palette.vcr"/>
   </SourceFiles>
