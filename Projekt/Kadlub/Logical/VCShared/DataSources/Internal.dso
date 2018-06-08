@@ -43,7 +43,7 @@
       <Property Name="FolderType" Value="Struct"/>
       <DataPoint Name="IPAddress">
         <Property Name="ConnectedBySharedResource" Value="False"/>
-        <Property Name="ConnectingVisus" Value="Software\HMI\GUIShip,Software\HMI\GUIShipM"/>
+        <Property Name="ConnectingVisus" Value="Software\HMI\GUIShipM,Software\HMI\GUIShip"/>
         <Property Name="Description" Value="IP-Address"/>
         <Property Name="PLCType" Value="STRING"/>
         <Property Name="StringLength" Value="65535"/>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<BR.AS.HardwareTopology Version="0.0.0.1">
+  <Modules>
+    <Module Name="X20BM11" Type="X20BM11" X="250" Y="100" />
+    <Module Name="X20BT9100" Type="X20BT9100" X="250" Y="100" />
+    <Module Name="X20TB12" Type="X20TB12" X="250" Y="127" />
+    <Module Name="X20CP1486" Type="X20CP1486" X="100" Y="100" />
+    <Module Name="X20BM01" Type="X20BM01" X="345.5" Y="104" />
+    <Module Name="X20BR9300" Type="X20BR9300" X="345.5" Y="104" />
+    <Module Name="X20TB12a" Type="X20TB12" X="345.5" Y="131" />
+    <Module Name="X20BM11a" Type="X20BM11" X="358.5" Y="104" />
+    <Module Name="X20DC4395" Type="X20DC4395" X="358.5" Y="104" />
+    <Module Name="X20TB12b" Type="X20TB12" X="358.5" Y="131" />
+  </Modules>
+  <Links>
+    <Link From="X20BR9300" To="X20BT9100" FromPort="X2X1" ToPort="X2X1" IsRoutedByUser="False">
+      <Point X="351.5" Y="148" />
+      <Point X="351.5" Y="148" />
+      <Point X="344.5" Y="148" />
+      <Point X="344.5" Y="144" />
+      <Point X="264" Y="144" />
+      <Point X="257" Y="144" />
+      <Point X="257" Y="144" />
+    </Link>
+  </Links>
+  <InfoElements />
+</BR.AS.HardwareTopology>

@@ -1,0 +1,5 @@
+VAR_CONFIG
+	::Ship:Ship.aiEncoder AT %IW."X20DC4395".ABEncoder01; (*Insert your comment here...*)
+	::Ship:Ship.coPump1 AT %QW."X20DC4395".PWMOutput04; (*Insert your comment here...*)
+	::Ship:Ship.coPump2 AT %QW."X20DC4395".PWMOutput08; (*Insert your comment here...*)
+END_VAR

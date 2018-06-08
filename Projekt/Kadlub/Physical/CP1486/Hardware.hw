@@ -84,6 +84,7 @@
   <Module Name="X20DC4395" Type="X20DC4395" Version="1.0.5.0">
     <Connection Connector="SS1" TargetModule="X20TB12h" TargetConnector="SS" />
     <Connection Connector="SL" TargetModule="X20BM11" TargetConnector="SL1" />
+    <Parameter ID="FunctionModel" Value="FunctionModel001" />
     <Parameter ID="Supervision" Value="off" />
     <Parameter ID="ConfigChannel0104" Value="Standard" />
     <Parameter ID="ConfigChannel0102" Value="AB" />

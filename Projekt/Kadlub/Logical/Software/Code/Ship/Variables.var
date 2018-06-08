@@ -1,4 +1,5 @@
 VAR
+	pumpOut : REAL;
 	Parameters : ParametersStruct;
 	Ship : ShipStruct;
 END_VAR

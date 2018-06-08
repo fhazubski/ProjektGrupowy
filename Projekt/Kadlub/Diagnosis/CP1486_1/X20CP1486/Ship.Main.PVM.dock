@@ -1,10 +1,10 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Ship 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=150 Type=0 Scope=0 Force=0 Index=6 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=150 Type=0 Scope=0 Force=0 Index=7 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                                 pumpOut                                     REAL    0 "                                                             0.0"    0    8    1   10    1    0         
+                                 pumpOut                                     REAL    0 "                                                            95.0"    0    8    1   10    1    0         
                                     Ship                               ShipStruct    0 "                                                               *"    0   24    1    0    1    1         
-                               aiEncoder                                      INT    2 "                                                             123"    1    3    1   10    0    0         
-                           cpEncoderZero                                      INT    0 "                                                               1"    1    3    1   10    0    0         
+                               aiEncoder                                      INT    1 "                                                             116"    1    3    1   10    0    0         
+                           cpEncoderZero                                      INT    0 "                                                             116"    1    3    1   10    0    0         
                                  coPump1                                     UINT    3 "                                                               0"    1    6    1   10    0    0         
                                  coPump2                                     UINT    3 "                                                               0"    1    6    1   10    0    0         
                            cpButtonStart                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
@@ -15,10 +15,18 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=150 Type=0 Scope=0 Force=0 Index
                             cpUpdatePump                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                          cpUpdatePumpTon                                      TON    0 "                                                               *"    1   24    1    0    0    1         
                                       IN                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                      PT                                     TIME    0 "                                                           T#0ms"    2   12    1    1    0    0         
+                                      PT                                     TIME    0 "                                                         T#010ms"    2   12    1    1    0    0         
                                        Q                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                       ET                                     TIME    0 "                                                           T#0ms"    2   12    1    1    0    0         
-                               StartTime                                     TIME    0 "                                                           T#0ms"    2   12    1    1    0    0         
+                               StartTime                                     TIME    0 "                                                 T#37m_39s_400ms"    2   12    1    1    0    0         
                                        M                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                  Restart                                    UDINT    0 "                                                               0"    2    7    1   10    0    0         
-                           cpPrevEncoder                                      INT    0 "                                                               0"    1    3    1   10    0    0         
+                           cpKeepPumpTon                                      TON    0 "                                                               *"    1   24    1    0    0    1         
+                                      IN                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                                      PT                                     TIME    0 "                                                         T#010ms"    2   12    1    1    0    0         
+                                       Q                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                      ET                                     TIME    0 "                                                           T#0ms"    2   12    1    1    0    0         
+                               StartTime                                     TIME    0 "                                                 T#37m_36s_960ms"    2   12    1    1    0    0         
+                                       M                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                                 Restart                                    UDINT    0 "                                                               0"    2    7    1   10    0    0         
+                           cpPrevEncoder                                      INT    0 "                                                             107"    1    3    1   10    0    0         

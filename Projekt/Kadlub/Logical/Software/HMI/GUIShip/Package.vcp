@@ -127,9 +127,8 @@
     <Source File="BitmapGroups\NavigationPad.bmgrp"/>
     <Source File="BitmapGroups\Borders.bmgrp"/>
     <Source File="Pages\ADMIN.page"/>
-    <Source File="Pages\Page_1.page"/>
-    <Source File="Pages\TEST.page"/>
-    <Source File="Pages\password_box.page"/>
+    <Source File="Pages\INFO.page"/>
+    <Source File="Pages\HOME.page"/>
     <Source File="StyleSheets\Gray.vcs"/>
     <Source File="StyleSheets\Color.vcs"/>
     <Source File="Borders\Raised.bdr"/>
