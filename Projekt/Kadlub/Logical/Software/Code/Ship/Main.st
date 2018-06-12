@@ -1,11 +1,11 @@
 PROGRAM _INIT
 	Parameters.PumpSpeed := 500;
-	Parameters.PasswordCheck := FALSE; //
+	Parameters.PasswordCheck := FALSE;
 	Ship.coPump1            := 0;
 	Ship.coPump2            := 0;
 	Ship.cpSystemActive     := FALSE;
 	Ship.cpPrevEncoder      := Ship.aiEncoder;
-	Ship.cpUpdatePumpTon.PT := T#10ms;
+	Ship.cpUpdatePumpTon.PT := T#100ms;
 	Ship.cpKeepPumpTon.PT   := T#50ms;
 END_PROGRAM
 
@@ -33,69 +33,79 @@ PROGRAM _CYCLIC
 	
 	(* Do przetestowania:
 	   - funkcja PID z biblioteki MTBasics
-	   - PID ISA *)
-	IF ( Ship.cpSystemActive ) THEN		
+	   - PID ISA 
+	   - PD, ustawic update na false *)
+	IF ( Ship.cpSystemActive ) THEN
+		(* Zaktualizuj predkosci pomp *)
+		
+		(* TODO usrednianie wartosci enkodera *)
 		IF ( Ship.cpUpdatePumpTon.Q ) THEN
-			(* Zaktualizuj predkosci pomp *)
-		
-			(* TODO usrednianie wartosci enkodera *)
-			pumpOut := INT_TO_REAL(Ship.aiEncoder - Ship.cpEncoderZero);
-			
-			IF ( ABS(pumpOut) > 50.0 ) THEN
-				Ship.cpKeepPumpTon.PT   := T#10ms;
-				pumpOut := pumpOut * 2.0;
-			ELSIF ( ABS(pumpOut) > 40.0 ) THEN
-				Ship.cpKeepPumpTon.PT   := T#10ms;
-				pumpOut := pumpOut * 2.0;
-			ELSIF ( ABS(pumpOut) > 30.0 ) THEN
-				Ship.cpKeepPumpTon.PT   := T#10ms;
-				pumpOut := pumpOut * 1.5;
-			ELSE
-				Ship.cpKeepPumpTon.PT   := T#10ms;
-				pumpOut := pumpOut * 1.0;
-			END_IF
-						
-			IF ( pumpOut < 0.0 ) THEN
-				pumpOut := pumpOut - 95.0;
-			ELSE 
-				pumpOut := pumpOut + 95.0;
-			END_IF
-			
-			IF ( pumpOut < -1000.0 ) THEN
-				pumpOut := -1000.0;
-			ELSIF ( pumpOut > 1000.0 ) THEN
-				pumpOut := 1000.0;
-			END_IF
-		
-			IF ( pumpOut > 100.0 ) THEN
-				IF ( pumpOut > UINT_TO_INT(Ship.coPump2) ) OR
-				   ( Ship.cpKeepPumpTon.Q ) THEN
-					Ship.coPump1 := 0;
-					Ship.coPump2 := REAL_TO_INT(pumpOut);
-					Ship.cpKeepPumpTon.IN := FALSE;
-					Ship.cpKeepPumpTon();
-					Ship.cpKeepPumpTon.IN := TRUE;
-					Ship.cpKeepPumpTon();
-				END_IF
-			ELSIF ( pumpOut < -100.0 ) THEN
-				IF ( pumpOut * (-1.0) > UINT_TO_INT(Ship.coPump1) ) OR
-				   ( Ship.cpKeepPumpTon.Q ) THEN
-					Ship.coPump1 := REAL_TO_INT(pumpOut * (-1.0));
-					Ship.coPump2 := 0;
-					Ship.cpKeepPumpTon.IN := FALSE;
-					Ship.cpKeepPumpTon();
-					Ship.cpKeepPumpTon.IN := TRUE;
-					Ship.cpKeepPumpTon();
-				END_IF
-			ELSE
-				IF ( Ship.cpKeepPumpTon.Q ) THEN
-					Ship.coPump1 := 0;
-					Ship.coPump2 := 0;
-				END_IF
-			END_IF
-		
-			Ship.cpPrevEncoder := Ship.aiEncoder;
+			previousDistanceChange := distanceChange;
+			distanceChange := INT_TO_REAL(Ship.aiEncoder - previousEncoder);
+			previousEncoder := Ship.aiEncoder;
 		END_IF
+		acceleration := previousDistanceChange - distanceChange;
+		pumpOut := acceleration;
+		IF ( ABS(pumpOut) <= 3.0 ) THEN
+			pumpOut := INT_TO_REAL(Ship.aiEncoder - Ship.cpEncoderZero);	
+		ELSE
+			pumpOut := pumpOut * 7.0;
+		END_IF
+
+		IF ( ABS(pumpOut) > 50.0 ) THEN
+			Ship.cpKeepPumpTon.PT   := T#10ms;
+			pumpOut := pumpOut * 2.0;
+		ELSIF ( ABS(pumpOut) > 40.0 ) THEN
+			Ship.cpKeepPumpTon.PT   := T#10ms;
+			pumpOut := pumpOut * 2.0;
+		ELSIF ( ABS(pumpOut) > 30.0 ) THEN
+			Ship.cpKeepPumpTon.PT   := T#10ms;
+			pumpOut := pumpOut * 1.5;
+		ELSE
+			Ship.cpKeepPumpTon.PT   := T#10ms;
+			pumpOut := pumpOut * 1.0;
+		END_IF
+						
+		IF ( pumpOut < 0.0 ) THEN
+			pumpOut := pumpOut - 95.0;
+		ELSE 
+			pumpOut := pumpOut + 95.0;
+		END_IF
+			
+		IF ( pumpOut < -1000.0 ) THEN
+			pumpOut := -1000.0;
+		ELSIF ( pumpOut > 1000.0 ) THEN
+			pumpOut := 1000.0;
+		END_IF
+		
+		IF ( pumpOut > 100.0 ) THEN
+			IF ( pumpOut > UINT_TO_INT(Ship.coPump2) ) OR
+				( Ship.cpKeepPumpTon.Q ) THEN
+				Ship.coPump1 := 100;
+				Ship.coPump2 := REAL_TO_INT(pumpOut);
+				Ship.cpKeepPumpTon.IN := FALSE;
+				Ship.cpKeepPumpTon();
+				Ship.cpKeepPumpTon.IN := TRUE;
+				Ship.cpKeepPumpTon();
+			END_IF
+		ELSIF ( pumpOut < -100.0 ) THEN
+			IF ( pumpOut * (-1.0) > UINT_TO_INT(Ship.coPump1) ) OR
+				( Ship.cpKeepPumpTon.Q ) THEN
+				Ship.coPump1 := REAL_TO_INT(pumpOut * (-1.0));
+				Ship.coPump2 := 100;
+				Ship.cpKeepPumpTon.IN := FALSE;
+				Ship.cpKeepPumpTon();
+				Ship.cpKeepPumpTon.IN := TRUE;
+				Ship.cpKeepPumpTon();
+			END_IF
+		ELSE
+			IF ( Ship.cpKeepPumpTon.Q ) THEN
+				Ship.coPump1 := 100;
+				Ship.coPump2 := 100;
+			END_IF
+		END_IF
+		
+		Ship.cpPrevEncoder := Ship.aiEncoder;
 	ELSE
 		Ship.coPump1 := 0;
 		Ship.coPump2 := 0;

@@ -1,4 +1,8 @@
 VAR
+	previousDistanceChange : REAL;
+	distanceChange : REAL;
+	previousEncoder : INT;
+	acceleration : REAL;
 	pumpOut : REAL;
 	Parameters : ParametersStruct;
 	Ship : ShipStruct;
