@@ -6,4 +6,6 @@ VAR
 	pumpOut : REAL;
 	Parameters : ParametersStruct;
 	Ship : ShipStruct;
+	PID : MTBasicsPID;
+	usePID : BOOL;
 END_VAR

@@ -1,34 +1,116 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Ship 
 Position X=0 Y=0 Width=0 Height=0 TabWidth Name=150 Type=0 Scope=0 Force=0 Index=9 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                          distanceChange                                     REAL    0 "                                                            -1.0"    0    8    1   10    1    0         
+                          distanceChange                                     REAL    0 "                                                             0.0"    0    8    1   10    1    0         
                             acceleration                                     REAL    0 "                                                             0.0"    0    8    1   10    1    0         
-                                 pumpOut                                     REAL    0 "                                                          -100.0"    0    8    1   10    1    0         
+                                 pumpOut                                     REAL    0 "                                                      140.213364"    0    8    1   10    1    0         
+                                  usePID                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
                                     Ship                               ShipStruct    0 "                                                               *"    0   24    1    0    1    1         
-                               aiEncoder                                      INT    1 "                                                             527"    1    3    1   10    0    0         
-                           cpEncoderZero                                      INT    0 "                                                             543"    1    3    1   10    0    0         
-                                 coPump1                                     UINT    3 "                                                               0"    1    6    1   10    0    0         
-                                 coPump2                                     UINT    3 "                                                               0"    1    6    1   10    0    0         
+                               aiEncoder                                      INT    1 "                                                             493"    1    3    1   10    0    0         
+                           cpEncoderZero                                      INT    0 "                                                             501"    1    3    1   10    0    0         
+                                 coPump1                                     UINT    3 "                                                             100"    1    6    1   10    0    0         
+                                 coPump2                                     UINT    3 "                                                             209"    1    6    1   10    0    0         
                            cpButtonStart                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                             cpButtonStop                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                        cpButtonCalibrate                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                          cpSystemActive                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                          cpSystemActive                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                               aiPassword                                    USINT    0 "                                                               0"    1    5    1   10    0    0         
-                            cpUpdatePump                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                         cpUpdatePumpTon                                      TON    0 "                                                               *"    1   24    1    0    0    1         
-                                      IN                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                      PT                                     TIME    0 "                                                         T#100ms"    2   12    1    1    0    0         
-                                       Q                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                      ET                                     TIME    0 "                                                           T#0ms"    2   12    1    1    0    0         
-                               StartTime                                     TIME    0 "                                                 T#39m_15s_070ms"    2   12    1    1    0    0         
-                                       M                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                 Restart                                    UDINT    0 "                                                               0"    2    7    1   10    0    0         
-                           cpKeepPumpTon                                      TON    0 "                                                               *"    1   24    1    0    0    1         
-                                      IN                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                                      PT                                     TIME    0 "                                                         T#010ms"    2   12    1    1    0    0         
-                                       Q                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                      ET                                     TIME    0 "                                                           T#0ms"    2   12    1    1    0    0         
+                         cpUpdatePumpTon                                      TON    0 "                                                               *"    1   24    1    0    0    0         
+                                      IN                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                      PT                                     TIME    0 "                                                               *"    2   12    1    1    0    0         
+                                       Q                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                      ET                                     TIME    0 "                                                               *"    2   12    1    1    0    0         
                                StartTime                                     TIME    0 "                                                               *"    2   12    1    1    0    0         
                                        M                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                  Restart                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
-                           cpPrevEncoder                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                           cpKeepPumpTon                                      TON    0 "                                                               *"    1   24    1    0    0    0         
+                                      IN                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                      PT                                     TIME    0 "                                                               *"    2   12    1    1    0    0         
+                                       Q                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                      ET                                     TIME    0 "                                                               *"    2   12    1    1    0    0         
+                               StartTime                                     TIME    0 "                                                               *"    2   12    1    1    0    0         
+                                       M                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 Restart                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
+                           cpPrevEncoder                                      INT    0 "                                                             493"    1    3    1   10    0    0         
+                                     PID                              MTBasicsPID    0 "                                                               *"    0   24    1    0    1    1         
+                                  Enable                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                           PIDParameters                      MTPIDParametersType    0 "                                                               *"    1   24    1    0    0    1         
+                                    Gain                                     REAL    0 "                                                            2.05"    2    8    1   10    0    0         
+                         IntegrationTime                                     REAL    0 "                                                             3.0"    2    8    1   10    0    0         
+                          DerivativeTime                                     REAL    0 "                                                             0.1"    2    8    1   10    0    0         
+                              FilterTime                                     REAL    0 "                                                            0.16"    2    8    1   10    0    0         
+                                  MinOut                                     REAL    0 "                                                         -1000.0"    1    8    1   10    0    0         
+                                  MaxOut                                     REAL    0 "                                                          1000.0"    1    8    1   10    0    0         
+                                  Invert                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                                  Update                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                SetValue                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                                ActValue                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+              IntegrationPartPresetValue                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                      SetIntegrationPart                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                 HoldOut                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                           TrackingValue                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                          EnableTracking                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                         HoldIntegration                                     DINT    0 "                                                               *"    1    4    1   10    0    0 e,0,mtIN
+
+                                    Busy                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                  Active                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                   Error                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                StatusID                                     DINT    0 "                                                               *"    1    4    1   10    0    0         
+                              UpdateDone                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                     Out                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                            ControlError                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                        ProportionalPart                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                         IntegrationPart                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                          DerivativePart                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                          TrackingActive                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                       IntegrationStatus                                     DINT    0 "                                                               *"    1    4    1   10    0    0 e,0,mtIN
+
+                         SystemReference                                    UDINT    0 "                                                               *"    1    7    1   10    0    0         
+                                Internal                  MTBasicsPIDInternalType    0 "                                                               *"    1   24    1    0    0    1         
+                               CycleTime                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                         ParametersValid                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           PIDParameters                      MTPIDParametersType    0 "                                                               *"    2   24    1    0    0    1         
+                                    Gain                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                         IntegrationTime                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                          DerivativeTime                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                              FilterTime                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                  MinOut                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                  MaxOut                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                  Invert                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                            ControlError                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                         ControlErrorOld                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                     Out                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                         HoldIntegration                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mtIN
+
+              IntegrationPartPresetValue                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                      SetIntegrationPart                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                   SetIntegrationPartOld                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                       EnableTrackingOld                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                            PID_StatusID                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                               UpdateOld                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               EnableOld                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                              EnableDone                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                            DisabledBusy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                              CounterOld                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
+                           SysRefParaNew                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                         SystemReference                        MTTransferFcnType    0 "                                                               *"    2   24    1    0    0    1         
+                           Communication                               MTCommType    0 "                                                               *"    3   24    1    0    0    1         
+                                      ID                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
+                                   Valid                                     BOOL    0 "                                                               *"    4    1    1    2    0    0         
+                                 Counter                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
+                               Numerator                               REAL[0..5]    0 "                                                               *"    3    8    6    0    0    1         
+                            Numerator[0]                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                            Numerator[1]                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                            Numerator[2]                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                            Numerator[3]                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                            Numerator[4]                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                            Numerator[5]                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                             Denominator                               REAL[0..5]    0 "                                                               *"    3    8    6    0    0    1         
+                          Denominator[0]                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                          Denominator[1]                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                          Denominator[2]                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                          Denominator[3]                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                          Denominator[4]                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                          Denominator[5]                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                              SampleTime                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                 CheckID                                     DINT    0 "                                                               *"    3    4    1   10    0    0         

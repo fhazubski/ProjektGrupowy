@@ -16,7 +16,6 @@ TYPE
 		cpButtonCalibrate : BOOL;
 		cpSystemActive : BOOL;
 		aiPassword : USINT;
-		cpUpdatePump : BOOL;
 		cpUpdatePumpTon : TON;
 		cpKeepPumpTon : TON;
 		cpPrevEncoder : INT;

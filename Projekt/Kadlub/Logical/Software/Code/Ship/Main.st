@@ -1,12 +1,35 @@
 PROGRAM _INIT
 	Parameters.PumpSpeed := 500;
 	Parameters.PasswordCheck := FALSE;
+	
 	Ship.coPump1            := 0;
 	Ship.coPump2            := 0;
 	Ship.cpSystemActive     := FALSE;
 	Ship.cpPrevEncoder      := Ship.aiEncoder;
+	Ship.cpEncoderZero      := 0;
 	Ship.cpUpdatePumpTon.PT := T#100ms;
 	Ship.cpKeepPumpTon.PT   := T#50ms;
+	
+	previousDistanceChange	:= 0;
+	distanceChange	        := 0;
+	previousEncoder	        := Ship.aiEncoder;
+	acceleration            := 0;
+	pumpOut                 := 0;
+	
+	usePID := TRUE;
+	
+	PID.Enable := TRUE; (* Aktywacja algorytmu PID*)
+	
+	(* Parametry algorytmu PID*)
+	PID.PIDParameters.Gain:= 2.05; //Wzmocnienie Kp
+	PID.PIDParameters.IntegrationTime:= 3.0; //Czas zdwojenia Ti - stale ladowanie funkcji
+	PID.PIDParameters.DerivativeTime:= 0.1; //Czas wyprzedzenia Td
+	PID.PIDParameters.FilterTime:= 0.16; //Sta³a czasowa filtracji bloku D
+
+	(* Ograniczenia sygna³u CV*)
+	PID.MinOut:= -1000.0;
+	PID.MaxOut:= 1000.0;
+
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -38,49 +61,65 @@ PROGRAM _CYCLIC
 	IF ( Ship.cpSystemActive ) THEN
 		(* Zaktualizuj predkosci pomp *)
 		
-		(* TODO usrednianie wartosci enkodera *)
-		IF ( Ship.cpUpdatePumpTon.Q ) THEN
-			previousDistanceChange := distanceChange;
-			distanceChange := INT_TO_REAL(Ship.aiEncoder - previousEncoder);
-			previousEncoder := Ship.aiEncoder;
-		END_IF
-		acceleration := previousDistanceChange - distanceChange;
-		pumpOut := acceleration;
-		IF ( ABS(pumpOut) <= 3.0 ) THEN
-			pumpOut := INT_TO_REAL(Ship.aiEncoder - Ship.cpEncoderZero);	
-		ELSE
-			pumpOut := pumpOut * 7.0;
-		END_IF
+		
+		IF ( usePID ) THEN
+			PID.SetValue := Ship.cpEncoderZero; //Sygna³ SP
+			PID.ActValue := Ship.aiEncoder;     //Sygna³ PV
 
-		IF ( ABS(pumpOut) > 50.0 ) THEN
-			Ship.cpKeepPumpTon.PT   := T#10ms;
-			pumpOut := pumpOut * 2.0;
-		ELSIF ( ABS(pumpOut) > 40.0 ) THEN
-			Ship.cpKeepPumpTon.PT   := T#10ms;
-			pumpOut := pumpOut * 2.0;
-		ELSIF ( ABS(pumpOut) > 30.0 ) THEN
-			Ship.cpKeepPumpTon.PT   := T#10ms;
-			pumpOut := pumpOut * 1.5;
+			(* Wywo³anie algorytmu – FUB*)
+			PID();
+
+			pumpOut := PID.Out * (-1.0);// Sygna³ CV
+			IF (pumpOut < 0.0) THEN
+				pumpOut := pumpOut - 100.0;
+			ELSE
+				pumpOut := pumpOut + 100.0;
+			END_IF
 		ELSE
-			Ship.cpKeepPumpTon.PT   := T#10ms;
-			pumpOut := pumpOut * 1.0;
-		END_IF
-						
-		IF ( pumpOut < 0.0 ) THEN
-			pumpOut := pumpOut - 95.0;
-		ELSE 
-			pumpOut := pumpOut + 95.0;
-		END_IF
+			IF ( Ship.cpUpdatePumpTon.Q ) THEN
+				previousDistanceChange := distanceChange;
+				distanceChange := INT_TO_REAL(Ship.aiEncoder - previousEncoder);
+				previousEncoder := Ship.aiEncoder;
+			END_IF
+			acceleration := previousDistanceChange - distanceChange;
+			pumpOut := acceleration;
+		
+			IF ( ABS(pumpOut) <= 3.0 ) THEN
+				pumpOut := INT_TO_REAL(Ship.aiEncoder - Ship.cpEncoderZero);	
+			ELSE
+				pumpOut := pumpOut * 7.0;
+			END_IF
 			
-		IF ( pumpOut < -1000.0 ) THEN
-			pumpOut := -1000.0;
-		ELSIF ( pumpOut > 1000.0 ) THEN
-			pumpOut := 1000.0;
+			IF ( ABS(pumpOut) > 50.0 ) THEN
+				Ship.cpKeepPumpTon.PT   := T#10ms;
+				pumpOut := pumpOut * 2.0;
+			ELSIF ( ABS(pumpOut) > 40.0 ) THEN
+				Ship.cpKeepPumpTon.PT   := T#10ms;
+				pumpOut := pumpOut * 2.0;
+			ELSIF ( ABS(pumpOut) > 30.0 ) THEN
+				Ship.cpKeepPumpTon.PT   := T#10ms;
+				pumpOut := pumpOut * 1.5;
+			ELSE
+				Ship.cpKeepPumpTon.PT   := T#10ms;
+				pumpOut := pumpOut * 1.0;
+			END_IF
+						
+			IF ( pumpOut < 0.0 ) THEN
+				pumpOut := pumpOut - 95.0;
+			ELSE 
+				pumpOut := pumpOut + 95.0;
+			END_IF
+			
+			IF ( pumpOut < -1000.0 ) THEN
+				pumpOut := -1000.0;
+			ELSIF ( pumpOut > 1000.0 ) THEN
+				pumpOut := 1000.0;
+			END_IF
 		END_IF
 		
 		IF ( pumpOut > 100.0 ) THEN
 			IF ( pumpOut > UINT_TO_INT(Ship.coPump2) ) OR
-				( Ship.cpKeepPumpTon.Q ) THEN
+				( Ship.cpKeepPumpTon.Q AND ( NOT usePID ) ) THEN
 				Ship.coPump1 := 100;
 				Ship.coPump2 := REAL_TO_INT(pumpOut);
 				Ship.cpKeepPumpTon.IN := FALSE;
@@ -90,7 +129,7 @@ PROGRAM _CYCLIC
 			END_IF
 		ELSIF ( pumpOut < -100.0 ) THEN
 			IF ( pumpOut * (-1.0) > UINT_TO_INT(Ship.coPump1) ) OR
-				( Ship.cpKeepPumpTon.Q ) THEN
+				( Ship.cpKeepPumpTon.Q AND ( NOT usePID ) ) THEN
 				Ship.coPump1 := REAL_TO_INT(pumpOut * (-1.0));
 				Ship.coPump2 := 100;
 				Ship.cpKeepPumpTon.IN := FALSE;
@@ -99,10 +138,8 @@ PROGRAM _CYCLIC
 				Ship.cpKeepPumpTon();
 			END_IF
 		ELSE
-			IF ( Ship.cpKeepPumpTon.Q ) THEN
-				Ship.coPump1 := 100;
-				Ship.coPump2 := 100;
-			END_IF
+			Ship.coPump1 := 100;
+			Ship.coPump2 := 100;
 		END_IF
 		
 		Ship.cpPrevEncoder := Ship.aiEncoder;
