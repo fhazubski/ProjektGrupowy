@@ -5,6 +5,8 @@ TYPE
 		Password : STRING[80];
 		PasswordCheck : BOOL;
 		HideLayer : USINT;
+		CalibrationCheck : BOOL;
+		Algorithm : STRING[80];
 	END_STRUCT;
 	ShipStruct : 	STRUCT 
 		aiEncoder : INT;
@@ -19,5 +21,6 @@ TYPE
 		cpUpdatePumpTon : TON;
 		cpKeepPumpTon : TON;
 		cpPrevEncoder : INT;
+		cpButtonRestart : BOOL;
 	END_STRUCT;
 END_TYPE

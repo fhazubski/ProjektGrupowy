@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?AutomationStudio Version="4.3.4.121 SP"?>
+<?AutomationStudio Version="4.3.6.57 SP"?>
 <Project xmlns="http://br-automation.co.at/AS/VC/Project">
   <Property Name="Backlight" Value="False"/>
   <Property Name="BeepKey" Value="False"/>
@@ -12,7 +12,7 @@
   <Property Name="DefaultKeyLevelNumeric" Value="0"/>
   <Property Name="DefaultKeyLevelString" Value="0"/>
   <Property Name="DefaultLanguage" Value="en"/>
-  <Property Name="DefaultPage" Value="Source[local].Page[ADMIN]"/>
+  <Property Name="DefaultPage" Value="Source[local].Page[INFO]"/>
   <Property Name="DefaultStyleSheet" Value="Source[local].StyleSheet[Color]"/>
   <Property Name="FocusControlDatapoint" Value="None"/>
   <Property Name="FontAntialiasing" Value="Off"/>
@@ -117,6 +117,8 @@
     <Source File="Bitmaps\zuneListPadHor_released.bminfo"/>
     <Source File="Bitmaps\zuneListPadVer_pressed.bminfo"/>
     <Source File="Bitmaps\zuneNumPad_pressed.bminfo"/>
+    <Source File="Bitmaps\u1.bminfo"/>
+    <Source File="Bitmaps\u3.bminfo"/>
     <Source File="BitmapGroups\AlphaPadQVGA.bmgrp"/>
     <Source File="BitmapGroups\NumPad.bmgrp"/>
     <Source File="BitmapGroups\AlphaPad.bmgrp"/>
@@ -126,9 +128,12 @@
     <Source File="BitmapGroups\AcknowledgeState.bmgrp"/>
     <Source File="BitmapGroups\NavigationPad.bmgrp"/>
     <Source File="BitmapGroups\Borders.bmgrp"/>
+    <Source File="BitmapGroups\BitmapGroup_1.bmgrp"/>
+    <Source File="BitmapGroups\BitmapGroup_2.bmgrp"/>
     <Source File="Pages\ADMIN.page"/>
     <Source File="Pages\INFO.page"/>
     <Source File="Pages\HOME.page"/>
+    <Source File="Pages\PASSWORD.page"/>
     <Source File="StyleSheets\Gray.vcs"/>
     <Source File="StyleSheets\Color.vcs"/>
     <Source File="Borders\Raised.bdr"/>

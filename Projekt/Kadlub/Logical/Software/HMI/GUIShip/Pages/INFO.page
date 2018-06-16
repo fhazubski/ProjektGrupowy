@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?AutomationStudio Version="4.3.4.121 SP"?>
 <Page xmlns="http://br-automation.co.at/AS/VC/Project" Name="INFO">
+  <Property Name="BackColor" Value="52"/>
   <Property Name="Description" Value=""/>
   <Property Name="Height" Value="600"/>
   <Property Name="Index" Value="0"/>
@@ -26,8 +27,8 @@
       <TextGroup>
         <TextLayer LanguageId="en">
           <Text ID="95001" Value="SERVICE"/>
-          <Text ID="95055" Value="Projekt zespołowy &quot;Kadłub&quot;, przygotowany przez studentów N1 grupy 30B na zaliczenie przedmiotu &quot;Projekt Zespołowy&quot;.\n\nCzęść serwis jest przeznaczona wyłącznie dla twórców aplikacji, dostęp do niej wymaga autoryzacji."/>
-          <Text ID="95088" Value="INFO"/>
+          <Text ID="95055" Value="Projekt zespołowy &quot;Kadłub&quot;, przygotowany przez studentów N1 grupy 30B na zaliczenie przedmiotu &quot;Projekt Zespołowy&quot;.\n\nCzęść serwis jest przeznaczona wyłącznie dla osób upoważnionych, dostęp do niej wymaga autoryzacji."/>
+          <Text ID="95088" Value="HOME"/>
         </TextLayer>
         <TextLayer LanguageId="de">
           <Text ID="95001" Value=""/>
@@ -66,7 +67,7 @@
           <Property Name="ControlID" Value="0"/>
           <Property Name="Description" Value=""/>
           <Property Name="Height" Value="133"/>
-          <Property Name="Left" Value="102"/>
+          <Property Name="Left" Value="142"/>
           <Property Name="Multiline" Value="Automatic"/>
           <Property Name="SimulationIndex" Value="0"/>
           <Property Name="SimulationValue" Value=""/>
@@ -74,7 +75,7 @@
           <Property Name="TextGroup" Value="Source[embedded].TextGroup"/>
           <Property Name="TextIndexOffset" Value="4"/>
           <Property Name="TextSource" Value="SingleText"/>
-          <Property Name="Top" Value="183"/>
+          <Property Name="Top" Value="323"/>
           <Property Name="Width" Value="505"/>
         </Control>
         <Control ClassId="0x00001002" Name="Button_2">
@@ -98,6 +99,19 @@
           <Property Name="VirtualKey" Value="Source[local].VirtualKey[%embVirtualKey_17]"/>
           <Property Name="Width" Value="183"/>
         </Control>
+        <Control ClassId="0x00001005" Name="Bitmap_1">
+          <Property Name="Bitmap" Value="Source[local].Bitmap[u3]"/>
+          <Property Name="BitmapSource" Value="SingleBitmap"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Height" Value="175"/>
+          <Property Name="IndexDatapoint" Value="None"/>
+          <Property Name="Left" Value="303"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Bitmap]"/>
+          <Property Name="Top" Value="99"/>
+          <Property Name="Width" Value="199"/>
+        </Control>
       </Controls>
       <KeyMapping>
         <VirtualKey Name="%embVirtualKey_5">
@@ -108,7 +122,7 @@
               <Property Name="Description" Value=""/>
               <Property Name="Locking" Value="Never"/>
               <Property Name="Name" Value="Action_0"/>
-              <Property Name="Page" Value="Source[local].Page[ADMIN]"/>
+              <Property Name="Page" Value="Source[local].Page[PASSWORD]"/>
               <Property Name="Target" Value="Page"/>
             </KeyAction>
           </KeyActions>

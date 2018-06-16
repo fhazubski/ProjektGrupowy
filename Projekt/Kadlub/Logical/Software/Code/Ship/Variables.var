@@ -8,4 +8,6 @@ VAR
 	Ship : ShipStruct;
 	PID : MTBasicsPID;
 	usePID : BOOL;
+	manualPump2 : BOOL;
+	manualPump1 : BOOL;
 END_VAR

@@ -1,7 +1,8 @@
 PROGRAM _INIT
 	Parameters.PumpSpeed := 500;
 	Parameters.PasswordCheck := FALSE;
-	
+	Parameters.CalibrationCheck := FALSE;
+	Parameters.Algorithm := ' Korzystasz z algorytmu PID ';
 	Ship.coPump1            := 0;
 	Ship.coPump2            := 0;
 	Ship.cpSystemActive     := FALSE;
@@ -9,7 +10,7 @@ PROGRAM _INIT
 	Ship.cpEncoderZero      := 0;
 	Ship.cpUpdatePumpTon.PT := T#100ms;
 	Ship.cpKeepPumpTon.PT   := T#50ms;
-	
+	Ship.cpButtonRestart	:= FALSE;
 	previousDistanceChange	:= 0;
 	distanceChange	        := 0;
 	previousEncoder	        := Ship.aiEncoder;
@@ -39,31 +40,47 @@ PROGRAM _CYCLIC
 	ELSE
 		Parameters.PasswordCheck := FALSE;
 	END_IF
-	IF (Parameters.PasswordCheck) THEN
-		//	layer.password.moveToBeginning();
-		//tutaj cos wpisac, zeby przelaczyc Layer - Password na stronie Admin z-order 3 na z-order 0
-	END_IF
+
 	
+	
+	IF Ship.cpButtonRestart THEN
+		Parameters.CalibrationCheck := FALSE;
+		Ship.coPump1            := 0;
+		Ship.coPump2            := 0;
+		Ship.cpSystemActive     := FALSE;
+		Ship.cpPrevEncoder      := Ship.aiEncoder;
+		Ship.cpEncoderZero      := 0;
+		usePID := TRUE;
+	END_IF;
 	
 	IF Ship.cpButtonCalibrate THEN
+		Parameters.PasswordCheck := TRUE;
+		Parameters.CalibrationCheck := Ship.cpButtonCalibrate;
 		Ship.cpEncoderZero := Ship.aiEncoder;
 	END_IF;
 	
+	//zrobione tak, aby byla mozliwosc zmiany algorytmu przed wlaczeniem systemu
+	IF ( usePID ) THEN
+		Parameters.Algorithm := ' Korzystasz z algorytmu PID ';
+	ELSE
+		Parameters.Algorithm := ' Korzystasz z algorytmu autorow ';
+	END_IF;
+		
+		
 	Ship.cpSystemActive :=
 	( NOT Ship.cpButtonStop ) AND
 	( Ship.cpButtonStart OR Ship.cpSystemActive );
-
 	
 	(* Do przetestowania:
 	   - funkcja PID z biblioteki MTBasics
 	   - PID ISA 
 	   - PD, ustawic update na false *)
-	IF ( Ship.cpSystemActive ) THEN
+	IF ( Ship.cpSystemActive AND ( NOT manualPump1 ) AND ( NOT manualPump2 ) ) THEN
 		(* Zaktualizuj predkosci pomp *)
 		
 		
 		IF ( usePID ) THEN
-			PID.SetValue := Ship.cpEncoderZero; //Sygna³ SP
+				PID.SetValue := Ship.cpEncoderZero; //Sygna³ SP
 			PID.ActValue := Ship.aiEncoder;     //Sygna³ PV
 
 			(* Wywo³anie algorytmu – FUB*)
@@ -76,6 +93,7 @@ PROGRAM _CYCLIC
 				pumpOut := pumpOut + 100.0;
 			END_IF
 		ELSE
+			Parameters.Algorithm := ' Korzystasz z algorytmu autorow ';
 			IF ( Ship.cpUpdatePumpTon.Q ) THEN
 				previousDistanceChange := distanceChange;
 				distanceChange := INT_TO_REAL(Ship.aiEncoder - previousEncoder);
@@ -148,6 +166,12 @@ PROGRAM _CYCLIC
 		Ship.coPump2 := 0;
 	END_IF
 	
+	IF ( manualPump1 ) THEN
+		Ship.coPump1 := 1000;
+	END_IF
+	IF ( manualPump2 ) THEN
+		Ship.coPump2 := 1000;
+	END_IF
 	
 	
 		
